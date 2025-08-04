@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SICO Hotel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="images/logo.jpg" alt="SICO Hotel" class="logo" />
+      <h1>Stay Smart, Stay Sico</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="carousel">
+  <img src="images/vip1.png" class="slide active" alt="Slide 1" />
+  <img src="images/vip2.png" class="slide" alt="Slide 2" />
+  <img src="images/dlx1.png" class="slide" alt="Slide 3" />
+  <img src="images/sps1.png" class="slide" alt="Slide 4" />
+  <img src="images/sps2.png" class="slide" alt="Slide 5" />
+
+  <button class="prev" onclick="prevSlide()">&#10094;</button>
+  <button class="next" onclick="nextSlide()">&#10095;</button>
+</section>
+
+    <section class="about">
+      <h1>Tentang Hotel Kami</h1>
+      <p>
+      SICO Hotel Jakarta hadir sebagai pilihan akomodasi ideal di pusat ibu kota, menawarkan kenyamanan maksimal dengan harga terjangkau. Berlokasi strategis di kawasan segitiga emas Jakarta, hotel ini hanya berjarak beberapa menit dari pusat perbelanjaan dan hiburan ternama seperti Thamrin City, Grand Indonesia (GI), Plaza Indonesia (PI), serta kawasan legendaris Bundaran Hotel Indonesia (HI). 
+      Lokasinya yang prima menjadikan SICO Hotel sangat cocok untuk tamu bisnis, wisatawan domestik maupun mancanegara yang ingin menjelajahi kota Jakarta dengan mudah.
+      </p>
+
+      <p>
+      Mengusung konsep "Stay Smart, Stay SICO", hotel ini menghadirkan kamar-kamar yang dirancang dengan interior modern, bersih, dan nyaman, dilengkapi dengan berbagai fasilitas penunjang seperti AC, Smart TV, dan akses Wi-Fi gratis. Kebersihan dan kenyamanan menjadi prioritas utama demi memberikan pengalaman menginap yang menyenangkan bagi setiap tamu.
+      </p>
+      
+      <p>
+      Pelayanan di SICO Hotel Jakarta pun tak kalah istimewa. Dengan layanan resepsionis 24 jam, kami siap membantu kebutuhan Anda kapan pun, baik untuk proses check-in/check-out, informasi seputar destinasi lokal, atau permintaan khusus lainnya. 
+      Staff kami yang ramah dan profesional selalu siap memberikan pelayanan terbaik demi kepuasan tamu.
+      Baik Anda sedang berlibur, melakukan perjalanan bisnis, atau sekadar mencari tempat singgah yang nyaman di tengah kota, SICO Hotel Jakarta adalah tempat yang tepat untuk menginap dengan tenang dan praktis.
+      SICO Hotel Jakarta — Nyaman, Strategis, dan Siap Melayani Anda 24 Jam.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="bottom-nav">
+      <a href="index.html">🏠</a>
+      <a href="room.html">🛌</a>
+      <a href="contact.html">📞</a>
+    </nav>
+  </footer>
+  <script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) {
+        slide.classList.add("active");
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  // Inisialisasi pertama
+  showSlide(currentIndex);
+</script>
+</body>
+</html>
